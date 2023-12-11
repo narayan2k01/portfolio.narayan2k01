@@ -540,6 +540,7 @@ span {
     .footer {
         padding: 2rem 3%;
     }
+    
 }
 
 @media (max-width: 896px) {
@@ -554,6 +555,7 @@ span {
     .home .profession-container .overlay {
         right: -43%;
     }
+    
 }
 
 @media (max-width: 879px) {
@@ -655,7 +657,7 @@ span {
     }
 
     .home .profession-box .profession:nth-child(1) {
-        transform: rotate(-90deg) translate(-120px, -210px);
+        transform: rotate(-90deg) translate(-120px, -210px, -360px);
     }
 
     .home .profession-box .profession:nth-child(1) i {
@@ -715,6 +717,10 @@ span {
     .testimonial-box .swiper-button-next,
     .testimonial-box .swiper-button-prev {
         display: none;
+    }
+    .btn{
+        margin-top: 8px;
+        margin: 3px;
     }
 }
 
