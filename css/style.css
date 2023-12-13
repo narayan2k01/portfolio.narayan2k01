@@ -542,7 +542,7 @@ span {
     }
 
     .home-img img {
-        display: none;
+        display: block;
     }
 
     .footer {
