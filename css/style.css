@@ -375,9 +375,12 @@ section {
 }
 
 .home-img img {
-    position:absolute;
+    /* position:absolute;
     bottom: 210px;
-    right: 70px;
+    right: 70px; */
+    position: absolute !important;
+    left: 66% !important;
+    top: 25% !important;
     pointer-events: none;
     max-width: 400px;
     max-height: 45vh;
@@ -557,7 +560,9 @@ span {
     }
 
     .home-img img {
-        right: 0;
+        left: 74% !important;
+        max-width: 215px;
+        top: 39% !important;
     }
 }
 
@@ -567,7 +572,8 @@ span {
     }
 
     .home-img img {
-        max-width: 420px;
+        min-width: 280px;
+    top: 36% !important;
     }
 }
 
@@ -589,7 +595,9 @@ span {
     }
 
     .home-img img {
-        max-width: 400px;
+        min-width: 242px !important;
+        top: 38% !important;
+        left: 75% !important;
     }
 }
 
@@ -617,7 +625,7 @@ span {
     }
 
     .home-img img {
-        display: block;
+        display: none;
     }
 
     .footer {
@@ -738,7 +746,7 @@ span {
     }
 
     .home .profession-box .profession:nth-child(1) {
-        transform: rotate(-90deg) translate(-120px, -210px);
+        transform: rotate(-90deg) translate(-110px, -220px);
     }
 
     .home .profession-box .profession:nth-child(1) i {
@@ -746,22 +754,22 @@ span {
     }
 
     .home .profession-box .profession:nth-child(2) {
-        transform: rotate(0deg) translate(0, -325px);
+        transform: rotate(0deg) translate(5px, -325px);
     }
 
     .home .profession-box .profession:nth-child(3) {
-        transform: rotate(90deg) translate(-115px, -450px);
+        transform: rotate(90deg) translate(-69px, -412px)
     }
 
     .home .profession-box .profession:nth-child(4) {
-        transform: rotate(180deg) translate(-220px, -325px);
+        transform: rotate(180deg) translate(-158px, -325px);
     }
 
     .home .profession-box .circle {
         position: fixed;
-        width: 670px;
-        height: 670px;
-        z-index: -1;
+    width: 657px;
+    height: 63% !important;
+    z-index: -1;
     }
 
     .home .profession-container .overlay {
@@ -769,7 +777,7 @@ span {
         top: 70rem;
         left: 50%;
         right: 0;
-        transform: rotate(90deg) translate(-50%, 50%) scaleY(3);
+        transform: rotate(90deg) translate(3%, 50%) scaleY(3);
         border-width: 23.9rem;
     }
 
