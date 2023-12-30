@@ -99,7 +99,9 @@ body {
     background: var(--main-color);
     opacity: .7;
 }
+/* =========================================================================================== */
 
+/* =========================================================================================== */
 
 #darkMode-icon {
     font-size: 2.4rem;
@@ -379,14 +381,14 @@ section {
     bottom: 210px;
     right: 70px; */
     position: absolute !important;
-    left: 66% !important;
-    top: 25% !important;
+    left: 76% !important;
+    top: 29% !important;
     pointer-events: none;
-    max-width: 400px;
-    max-height: 45vh;
+    max-width: 368px;
+    max-height: 42vh;
     border-radius: 50%;
-    border: .5rem solid var(--bg-color);
-    outline: .5rem solid var(--main-color);
+    border: 0.5rem solid var(--bg-color);
+    outline: 0.5rem solid var(--main-color);
 }
 
 span {
