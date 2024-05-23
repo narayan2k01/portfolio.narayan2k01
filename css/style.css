@@ -14,7 +14,7 @@
 :root {
     --bg-color: #fdfdfd;
     --text-color: #333;
-    --main-color: #2F3C7E;
+    --main-color: #264653;
     --white-color: #fdfdfd;
     --shadow-color: rgba(0, 0, 0, .2);
 }
@@ -239,14 +239,14 @@ section {
     background: transparent;
     color: var(--black);
     border-color: var(--black);
-    box-shadow: 3.0px 5.9px 5.9px hsl(0deg 0% 0% / 0.41);
+    box-shadow: 3.0px 5.9px 5.9px var(--shadow-color);
 }
 .contact-button-container {
     display: flex;
     padding: 1rem 1.8rem;
     background: var(--main-color);
     border-radius: 30px;
-    box-shadow: 3.0px 5.9px 5.9px hsl(0deg 0% 0% / 0.41);
+    box-shadow: 3.0px 5.9px 5.9px var(--shadow-color);
     font-size: 1.6rem;
     color: var(--white-color);
     letter-spacing: .1rem;
@@ -461,6 +461,14 @@ span {
 }
 
 .portfolio-box:hover img {
+    transform: scale(1.1);
+}
+.portfolio-box video {
+    width: 100%;
+    transition: .5s ease;
+}
+
+.portfolio-box:hover video {
     transform: scale(1.1);
 }
 

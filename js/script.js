@@ -40,24 +40,6 @@ navbar.classList.remove('active');
 
 };
 
-
-/*========== swiper ==========*/
-var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 50,
-    loop: true,
-    grabCursor: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-});
-
-
 /*========== dark light mode ==========*/
 let darkModeIcon = document.querySelector('#darkMode-icon');
 
@@ -79,3 +61,23 @@ ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
 ScrollReveal().reveal('.home-img img, .services-container, .portfolio-box, .testimonial-wrapper, .contact form', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img img', { origin: 'left' });
 ScrollReveal().reveal('.home-content h3, .home-content p, .about-content', { origin: 'right' });
+
+const button = document.querySelector(".button");
+
+button.addEventListener("click", () => {
+  button.classList.add("active");
+  setTimeout(() => {
+    button.classList.remove("active");
+    button
+      .querySelector("i")
+      .classList.replace("bx-cloud-download", "bx-check-circle");
+    button.querySelector("span").innerText = "Completed";
+
+    setTimeout(() => {
+      button
+        .querySelector("i")
+        .classList.replace("bx-check-circle", "bx-cloud-download");
+      button.querySelector("span").innerText = "Download Again";
+    }, 3000);
+  }, 6000);
+});
