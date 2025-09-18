@@ -7,7 +7,6 @@ menuIcon.onclick = () => {
     navbar.classList.toggle('active');
 };
 
-
 /*========== scroll sections active link ==========*/
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
@@ -27,12 +26,9 @@ window.onscroll = () => {
         };
     });
 
-
 /*========== sticky navbar ==========*/
 let header = document.querySelector('.header');
-
 header.classList.toggle('sticky', window.scrollY > 100);
-
 
 /*========== remove menu icon navbar when click navbar link (scroll) ==========*/
 menuIcon.classList.remove('bx-x');
@@ -48,36 +44,15 @@ darkModeIcon.onclick = () => {
     document.body.classList.toggle('dark-mode');
 };
 
-
 /*========== scroll reveal ==========*/
 ScrollReveal({
-    // reset: true,
+    reset: true,
     distance: '80px',
     duration: 2000,
     delay: 200
 });
 
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img img, .services-container, .portfolio-box, .testimonial-wrapper, .contact form', { origin: 'bottom' });
-ScrollReveal().reveal('.home-content h1, .about-img img', { origin: 'left' });
+ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
+ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-content h3, .home-content p, .about-content', { origin: 'right' });
-
-const button = document.querySelector(".button");
-
-button.addEventListener("click", () => {
-  button.classList.add("active");
-  setTimeout(() => {
-    button.classList.remove("active");
-    button
-      .querySelector("i")
-      .classList.replace("bx-cloud-download", "bx-check-circle");
-    button.querySelector("span").innerText = "Completed";
-
-    setTimeout(() => {
-      button
-        .querySelector("i")
-        .classList.replace("bx-check-circle", "bx-cloud-download");
-      button.querySelector("span").innerText = "Download Again";
-    }, 3000);
-  }, 6000);
-});
