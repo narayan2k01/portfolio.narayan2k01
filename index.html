@@ -1,141 +1,910 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="tw-scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Narayan Sharma - Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="images/home.jpg">
+    <title>Narayan Sharma - Web Developer & Designer</title>
+    <link rel="icon" type="image/x-icon" href="images/profile.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            prefix: 'tw-',
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a'
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'pulse-slow': 'pulse 3s infinite'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
+    <style>
+        /* Custom styles for animations */
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Custom gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Glassmorphism effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .dark .glass {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
 
-<body>
-    <header class="header">
-        <a href="#" class="logo">Narayan Sharma</a>
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
-        </nav>
+<body class="tw-bg-gray-50 dark:tw-bg-gray-900 tw-text-gray-800 dark:tw-text-gray-100 tw-transition-colors tw-duration-300">
 
-        <div class="bx bx-moon" id="darkMode-icon"></div>
-        <div class="bx bx-menu" id="menu-icon"></div>
-    </header>
+    <nav class="navbar navbar-expand-lg tw-fixed tw-top-0 tw-w-full tw-z-50 tw-bg-white/90 dark:tw-bg-gray-900/90 tw-backdrop-blur-md tw-border-b tw-border-gray-200 dark:tw-border-gray-700">
+        <div class="container-fluid tw-max-w-7xl tw-mx-auto">
+            <a class="navbar-brand tw-text-2xl tw-font-bold gradient-text" href="#home">
+                Narayan Sharma
+            </a>
 
-    <section class="home" id="home">
-        <div class="home-content">
-            <h3>Hello, I am</h3>
-            <h1>Narayan Sharma</h1>
-            <p>An IT professional with a strong foundation in web development and a growing skill set across multiple technologies. I am proficient in JavaScript, HTML5, and CSS3, with a proven ability to build responsive and user-friendly applications. I am also skilled in API integration and database operations.</p>
-            <div class="social-media">
-                <a href="https://github.com/narayan2k01" target="_blank"><i class='bx bxl-github'></i></a>
-                <a href="https://instagram.com/narayan_2k01" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
-                <a href="https://www.linkedin.com/in/narayan2k01/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-            </div>
-            <a href="Narayan_Resume.pdf" download class="btn">Download CV</a>
-        </div>
-        <div class="home-img">
-            <img src="images/profile.jpg" alt="Narayan Sharma">
-        </div>
-    </section>
+           
 
-    <section class="about" id="about">
-     
-        <div class="about-content">
-            <h2 class="heading">About <span>Me</span></h2>
-            <h3>A Passionate Developer</h3>
-            <p>I am a Computer Science graduate from P.I.E.T, Panipat with a fervent enthusiasm for coding, I am dedicated to continuously enhancing my technical expertise and problem-solving capabilities. My soft skills include strong analytical ability, logical problem-solving, and effective team collaboration. I am open to new opportunities and ready to contribute my expertise to your projects.</p>
-            <a href="#contact" class="btn">Let's Connect</a>
-        </div>
-    </section>
-
-    <section class="services" id="services">
-        <h2 class="heading">My <span>Expertise</span></h2>
-        <div class="services-container">
-            <div class="services-box">
-                <i class='bx bx-code-alt'></i>
-                <h3>Web Development</h3>
-                <p>Building responsive and dynamic web applications from scratch using modern web technologies.</p>
-            </div>
-            <div class="services-box">
-                <i class='bx bxl-react'></i>
-                <h3>Frontend Development</h3>
-               <p>Creating interactive and high-performance user interfaces with frameworks like React.js to enhance user experience.</p>
-            </div>
-            <div class="services-box">
-                <i class='bx bx-mobile-alt'></i>
-                <h3>API Integration</h3>
-                <p>Seamlessly connecting web applications with various APIs to add new functionalities and enhance data flow.</p>
+            <div class="collapse navbar-collapse tw-justify-end">
+                <ul class="navbar-nav tw-items-center tw-gap-6">
+                    <li class="nav-item">
+                        <a class="nav-link tw-text-gray-700 dark:tw-text-gray-300 hover:tw-text-primary-600 tw-transition-colors" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link tw-text-gray-700 dark:tw-text-gray-300 hover:tw-text-primary-600 tw-transition-colors" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link tw-text-gray-700 dark:tw-text-gray-300 hover:tw-text-primary-600 tw-transition-colors" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link tw-text-gray-700 dark:tw-text-gray-300 hover:tw-text-primary-600 tw-transition-colors" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link tw-text-gray-700 dark:tw-text-gray-300 hover:tw-text-primary-600 tw-transition-colors" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link tw-text-gray-700 dark:tw-text-gray-300 hover:tw-text-primary-600 tw-transition-colors" href="#contact">Contact</a>
+                    </li>
+                   
+                </ul>
             </div>
         </div>
-    </section>
 
-    <section class="portfolio" id="portfolio">
-        <h2 class="heading">My <span>Projects</span></h2>
-        <div class="portfolio-container">
-            <div class="portfolio-box">
-                <img src="images/portfolio1.jpeg" alt="Project EditFlow">
-                <div class="portfolio-layer">
-                    <h4>EditFlow</h4>
-                    <p>A modern, responsive text editor with advanced text manipulation features and a bionic reading mode. It includes a sticky toolbar, PDF export, and live word/character counts.</p>
-                    <a href="https://edit-flow.vercel.app/" target="_blank"><i class='bx bx-link-external'></i></a>
+    
+    </nav>
+
+    <section id="home" class="tw-min-h-screen tw-flex tw-items-center tw-pt-20">
+        <div class="container-fluid tw-max-w-7xl tw-mx-auto tw-px-4">
+            <div class="row tw-items-center tw-min-h-[80vh] g-5">
+                <div class="col-lg-6 animate__animated animate__fadeInLeft">
+                    <div class="tw-mb-6">
+                        <div class="tw-inline-flex tw-items-center tw-gap-2 tw-bg-primary-50 dark:tw-bg-primary-900/20 tw-px-4 tw-py-2 tw-rounded-full tw-mb-6">
+                            <div class="tw-w-2 tw-h-2 tw-bg-green-500 tw-rounded-full tw-animate-pulse"></div>
+                            <span class="tw-text-sm tw-font-medium tw-text-primary-700 dark:tw-text-primary-300">Available for work</span>
+                        </div>
+                    </div>
+                    
+                    <h1 class="tw-text-4xl md:tw-text-6xl tw-font-bold tw-mb-6 tw-leading-tight">
+                        Hello, I'm <br>
+                        <span class="gradient-text">Narayan Sharma</span>
+                    </h1>
+                    
+                    <h2 class="tw-text-2xl md:tw-text-3xl tw-font-medium tw-mb-6 tw-text-gray-600 dark:tw-text-gray-300">
+                        I'm a <span id="typed-text" class="tw-text-primary-600 dark:tw-text-primary-400"></span>
+                    </h2>
+                    
+                    <p class="tw-text-lg tw-mb-8 tw-text-gray-600 dark:tw-text-gray-300 tw-leading-relaxed">
+                        An IT Graduate skilled in modern web development, 
+                        Software Development, and WordPress solutions. Ready to bring your digital ideas to life 
+                        with clean code and creative design.
+                    </p>
+                    
+                    <div class="d-grid gap-3 d-md-flex justify-content-md-start tw-mb-8">
+    <a href="#projects" class="btn btn-primary tw-px-6 tw-py-3 tw-rounded-lg tw-font-medium tw-transition-all hover:tw-scale-105 hover:tw-shadow-lg">
+        <i class='bx bx-code-alt tw-mr-2'></i>View My Work
+    </a>
+    <a href="Narayan_Resume.pdf" download class="btn btn-outline-primary tw-px-6 tw-py-3 tw-rounded-lg tw-font-medium tw-transition-all hover:tw-scale-105">
+        <i class='bx bx-download tw-mr-2'></i>Download CV
+    </a>
+</div>
+                    
+                    <div class="tw-flex tw-gap-4">
+                        <a href="https://github.com/narayan2k01" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="tw-p-3 tw-rounded-lg tw-bg-gray-100 dark:tw-bg-gray-800 hover:tw-bg-gray-200 dark:hover:tw-bg-gray-700 tw-transition-all hover:tw-scale-110">
+                            <i class='bx bxl-github tw-text-xl'></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/narayan2k01/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="tw-p-3 tw-rounded-lg tw-bg-gray-100 dark:tw-bg-gray-800 hover:tw-bg-gray-200 dark:hover:tw-bg-gray-700 tw-transition-all hover:tw-scale-110">
+                            <i class='bx bxl-linkedin tw-text-xl'></i>
+                        </a>
+                        <a href="https://instagram.com/narayan_2k01" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile" class="tw-p-3 tw-rounded-lg tw-bg-gray-100 dark:tw-bg-gray-800 hover:tw-bg-gray-200 dark:hover:tw-bg-gray-700 tw-transition-all hover:tw-scale-110">
+                            <i class='bx bxl-instagram-alt tw-text-xl'></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 animate__animated animate__fadeInRight">
+                    <div class="tw-flex tw-justify-center tw-relative">
+                        <div class="tw-relative tw-group">
+                            <div class="tw-absolute tw-inset-0 tw-bg-gradient-to-r tw-from-primary-500 tw-to-purple-600 tw-rounded-full tw-blur-xl tw-opacity-30 group-hover:tw-opacity-50 tw-transition-opacity tw-duration-500"></div>
+                            <img src="images/profile.jpg" alt="Narayan Sharma" class="tw-relative tw-w-80 tw-h-80 tw-object-cover tw-rounded-full tw-border-4 tw-border-white dark:tw-border-gray-800 tw-shadow-2xl group-hover:tw-scale-105 tw-transition-transform tw-duration-500">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="portfolio-box">
-                <img src="images/portfolio2.jpeg" alt="Project Postal-Code">
-                <div class="portfolio-layer">
-                    <h4>Postal-Code App</h4>
-                    <p>An app that allows users to input a postal code and retrieve location details, including the country, state, and place name on a map.</p>
-                    <a href="https://postal-code-app.vercel.app/" target="_blank"><i class='bx bx-link-external'></i></a>
+        </div>
+    </section>
+
+    <section id="about" class="tw-py-20 tw-bg-white dark:tw-bg-gray-800">
+        <div class="container-fluid tw-max-w-7xl tw-mx-auto tw-px-4">
+            <div class="row tw-items-center g-5">
+                <div class="col-lg-6 animate__animated" data-animate="animate__fadeInLeft">
+                    <h2 class="tw-text-4xl tw-font-bold tw-mb-6">
+                        About <span class="gradient-text">Me</span>
+                    </h2>
+                    <h3 class="tw-text-2xl tw-font-semibold tw-mb-6 tw-text-primary-600 dark:tw-text-primary-400">
+                        An enthusiast Developer
+                    </h3>
+                    <p class="tw-text-lg tw-mb-8 tw-text-gray-600 dark:tw-text-gray-300 tw-leading-relaxed">
+                        Recent Computer Science graduate from P.I.E.T, Panipat with a passion for creating 
+                        digital experiences. I combine technical skills with creative thinking to build 
+                        websites and applications that not only work flawlessly but also delight users.
+                    </p>
+                    
+                    <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-3 tw-gap-4 tw-mb-8">
+                        <div class="glass tw-p-4 tw-rounded-lg tw-text-center">
+                            <i class='bx bx-brain tw-text-3xl tw-text-primary-600 tw-mb-2'></i>
+                            <h4 class="tw-font-semibold tw-text-sm">Problem Solver</h4>
+                        </div>
+                        <div class="glass tw-p-4 tw-rounded-lg tw-text-center">
+                            <i class='bx bx-group tw-text-3xl tw-text-primary-600 tw-mb-2'></i>
+                            <h4 class="tw-font-semibold tw-text-sm">Team Player</h4>
+                        </div>
+                        <div class="glass tw-p-4 tw-rounded-lg tw-text-center">
+                            <i class='bx bx-rocket tw-text-3xl tw-text-primary-600 tw-mb-2'></i>
+                            <h4 class="tw-font-semibold tw-text-sm">Fast Learner</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="tw-text-center">
+                        <a href="#contact" class="btn btn-primary tw-px-6 tw-py-3 tw-rounded-lg tw-font-medium tw-transition-all hover:tw-scale-105">
+                            Hire Me 🫰
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="images/portfolio3.png" alt="Project Postal-Code">
-                <div class="portfolio-layer">
-                    <h4>MediCare Sonipat</h4>
-                    <p>Your Trusted Pharmacy in Sonipat Haryana,
-Quality medicines, expert advice, and compassionate care for your family's health needs.</p>
-                    <a href="https://medicare-snp.vercel.app/" target="_blank"><i class='bx bx-link-external'></i></a>
+                
+                <div class="col-lg-6 animate__animated" data-animate="animate__fadeInRight">
+                    <div class="tw-bg-gradient-to-br tw-from-primary-500 tw-to-purple-600 tw-p-8 tw-rounded-2xl tw-shadow-2xl">
+                        <div class="tw-bg-white dark:tw-bg-gray-900 tw-p-6 tw-rounded-xl">
+                            <h4 class="tw-text-xl tw-font-bold tw-mb-4 gradient-text">Quick Facts</h4>
+                            <ul class="tw-space-y-3">
+                                
+                                <li class="tw-flex tw-items-center tw-gap-3">
+                                    <i class='bx bx-check-circle tw-text-green-500'></i>
+                                    <span>Specializing in Frontend & WordPress</span>
+                                </li>
+                                <li class="tw-flex tw-items-center tw-gap-3">
+                                    <i class='bx bx-check-circle tw-text-green-500'></i>
+                                    <span>Eager to Learn & Grow</span>
+                                </li>
+                                <li class="tw-flex tw-items-center tw-gap-3">
+                                    <i class='bx bx-check-circle tw-text-green-500'></i>
+                                    <span>Available for Freelance Projects</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contact">
-    <h2 class="heading">Contact <span>Me!</span></h2>
-    <form action="https://formsubmit.co/narayan2k01@gmail.com" method="POST">
-        <div class="input-box">
-            <input type="text" placeholder="Full Name" name="full_name" required>
-            <input type="email" placeholder="Email Address" name="email" required>
-        </div>
-        <div class="input-box">
-            <input type="tel" placeholder="Mobile Number" name="mobile_number" required>
-            <input type="text" placeholder="Email Subject" name="email_subject" required>
-        </div>
-        <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
-        <input type="submit" value="Send Message" class="btn">
-    </form>
-</section>
+    <section id="skills" class="tw-py-20">
+        <div class="container-fluid tw-max-w-7xl tw-mx-auto tw-px-4">
+            <div class="tw-text-center tw-mb-16 animate__animated" data-animate="animate__fadeInUp">
+                <h2 class="tw-text-4xl tw-font-bold tw-mb-4">
+                    My <span class="gradient-text">Skills</span>
+                </h2>
+                <p class="tw-text-lg tw-text-gray-600 dark:tw-text-gray-300">
+                    Technologies and tools I work with
+                </p>
+            </div>
+            
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6 animate__animated" data-animate="animate__fadeInUp" data-delay="100">
+                    <div class="tw-bg-white dark:tw-bg-gray-800 tw-p-6 tw-rounded-2xl tw-shadow-lg tw-border tw-border-gray-100 dark:tw-border-gray-700 hover:tw-shadow-xl tw-transition-all tw-duration-300 tw-h-full">
+                        <div class="tw-text-center tw-mb-6">
+                            <i class='bx bx-code-alt tw-text-4xl tw-text-blue-500 tw-mb-4'></i>
+                            <h3 class="tw-text-xl tw-font-bold tw-mb-2">Frontend</h3>
+                        </div>
+                        <div class="tw-space-y-3">
+                            <div class="skill-item">
+                                <div class="tw-flex tw-justify-between tw-mb-1">
+                                    <span class="tw-text-sm tw-font-medium">HTML5 & CSS3</span>
+                                    <span class="tw-text-sm tw-text-gray-500">90%</span>
+                                </div>
+                                <div class="tw-w-full tw-bg-gray-200 dark:tw-bg-gray-700 tw-rounded-full tw-h-2">
+                                    <div class="tw-bg-blue-500 tw-h-2 tw-rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="tw-flex tw-justify-between tw-mb-1">
+                                    <span class="tw-text-sm tw-font-medium">JavaScript</span>
+                                    <span class="tw-text-sm tw-text-gray-500">80%</span>
+                                </div>
+                                <div class="tw-w-full tw-bg-gray-200 dark:tw-bg-gray-700 tw-rounded-full tw-h-2">
+                                    <div class="tw-bg-yellow-500 tw-h-2 tw-rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="tw-flex tw-justify-between tw-mb-1">
+                                    <span class="tw-text-sm tw-font-medium">React.js</span>
+                                    <span class="tw-text-sm tw-text-gray-500">70%</span>
+                                </div>
+                                <div class="tw-w-full tw-bg-gray-200 dark:tw-bg-gray-700 tw-rounded-full tw-h-2">
+                                    <div class="tw-bg-cyan-500 tw-h-2 tw-rounded-full" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <footer class="footer">
-        <div class="footer-text">
-            <p>Copyright &copy; 2024 by Narayan Sharma | All Rights Reserved.</p>
+            
+                <div class="col-lg-4 col-md-6 animate__animated" data-animate="animate__fadeInUp" data-delay="300">
+                    <div class="tw-bg-white dark:tw-bg-gray-800 tw-p-6 tw-rounded-2xl tw-shadow-lg tw-border tw-border-gray-100 dark:tw-border-gray-700 hover:tw-shadow-xl tw-transition-all tw-duration-300 tw-h-full">
+                        <div class="tw-text-center tw-mb-6">
+                            <i class='bx bxl-wordpress tw-text-4xl tw-text-blue-600 tw-mb-4'></i>
+                            <h3 class="tw-text-xl tw-font-bold tw-mb-2">WordPress</h3>
+                        </div>
+                        <div class="tw-space-y-3">
+                            <div class="skill-item">
+                                <div class="tw-flex tw-justify-between tw-mb-1">
+                                    <span class="tw-text-sm tw-font-medium">Theme Development</span>
+                                    <span class="tw-text-sm tw-text-gray-500">75%</span>
+                                </div>
+                                <div class="tw-w-full tw-bg-gray-200 dark:tw-bg-gray-700 tw-rounded-full tw-h-2">
+                                    <div class="tw-bg-blue-600 tw-h-2 tw-rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="tw-flex tw-justify-between tw-mb-1">
+                                    <span class="tw-text-sm tw-font-medium">Plugin Development</span>
+                                    <span class="tw-text-sm tw-text-gray-500">65%</span>
+                                </div>
+                                <div class="tw-w-full tw-bg-gray-200 dark:tw-bg-gray-700 tw-rounded-full tw-h-2">
+                                    <div class="tw-bg-green-600 tw-h-2 tw-rounded-full" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="tw-flex tw-justify-between tw-mb-1">
+                                    <span class="tw-text-sm tw-font-medium">Customization</span>
+                                    <span class="tw-text-sm tw-text-gray-500">80%</span>
+                                </div>
+                                <div class="tw-w-full tw-bg-gray-200 dark:tw-bg-gray-700 tw-rounded-full tw-h-2">
+                                    <div class="tw-bg-orange-500 tw-h-2 tw-rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 animate__animated" data-animate="animate__fadeInUp" data-delay="400">
+                    <div class="tw-bg-white dark:tw-bg-gray-800 tw-p-6 tw-rounded-2xl tw-shadow-lg tw-border tw-border-gray-100 dark:tw-border-gray-700 hover:tw-shadow-xl tw-transition-all tw-duration-300 tw-h-full">
+                        <div class="tw-text-center tw-mb-6">
+                            <i class='bx bx-wrench tw-text-4xl tw-text-green-500 tw-mb-4'></i>
+                            <h3 class="tw-text-xl tw-font-bold tw-mb-2">Tools</h3>
+                        </div>
+                        <div class="tw-space-y-3">
+                            <div class="skill-item">
+                                <div class="tw-flex tw-justify-between tw-mb-1">
+                                    <span class="tw-text-sm tw-font-medium">Git & GitHub</span>
+                                    <span class="tw-text-sm tw-text-gray-500">80%</span>
+                                </div>
+                                <div class="tw-w-full tw-bg-gray-200 dark:tw-bg-gray-700 tw-rounded-full tw-h-2">
+                                    <div class="tw-bg-gray-800 tw-h-2 tw-rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="tw-flex tw-justify-between tw-mb-1">
+                                    <span class="tw-text-sm tw-font-medium">VS Code</span>
+                                    <span class="tw-text-sm tw-text-gray-500">90%</span>
+                                </div>
+                                <div class="tw-w-full tw-bg-gray-200 dark:tw-bg-gray-700 tw-rounded-full tw-h-2">
+                                    <div class="tw-bg-blue-500 tw-h-2 tw-rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="tw-flex tw-justify-between tw-mb-1">
+                                    <span class="tw-text-sm tw-font-medium">APIs & Databases</span>
+                                    <span class="tw-text-sm tw-text-gray-500">70%</span>
+                                </div>
+                                <div class="tw-w-full tw-bg-gray-200 dark:tw-bg-gray-700 tw-rounded-full tw-h-2">
+                                    <div class="tw-bg-red-500 tw-h-2 tw-rounded-full" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="footer-iconTop">
-            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+    </section>
+
+    <section id="services" class="tw-py-20 tw-bg-white dark:tw-bg-gray-800">
+        <div class="container-fluid tw-max-w-7xl tw-mx-auto tw-px-4">
+            <div class="tw-text-center tw-mb-16 animate__animated" data-animate="animate__fadeInUp">
+                <h2 class="tw-text-4xl tw-font-bold tw-mb-4">
+                    My <span class="gradient-text">Services</span>
+                </h2>
+                <p class="tw-text-lg tw-text-gray-600 dark:tw-text-gray-300">
+                    What I can do for you as a fresh developer
+                </p>
+            </div>
+            
+            <div class="row g-5">
+                <div class="col-lg-6 col-md-6 animate__animated" data-animate="animate__fadeInUp" data-delay="100">
+                    <div class="tw-bg-gradient-to-br tw-from-blue-500 tw-to-purple-600 tw-p-6 tw-rounded-2xl tw-shadow-xl hover:tw-shadow-2xl tw-transition-all tw-duration-300 hover:tw-scale-105 tw-text-white tw-h-full">
+                        <div class="tw-text-center tw-mb-6">
+                            <i class='bx bx-code-alt tw-text-5xl tw-mb-4'></i>
+                            <h3 class="tw-text-2xl tw-font-bold tw-mb-2">Web Development</h3>
+                        </div>
+                        <p class="tw-mb-6 tw-text-blue-100">
+                            Clean, responsive websites built with modern technologies. 
+                            Perfect for small businesses and personal brands.
+                        </p>
+                        <ul class="tw-space-y-2 tw-mb-6">
+                            <li class="tw-flex tw-items-center tw-gap-2">
+                                <i class='bx bx-check tw-text-green-400'></i>
+                                <span class="tw-text-sm">Responsive Design</span>
+                            </li>
+                            <li class="tw-flex tw-items-center tw-gap-2">
+                                <i class='bx bx-check tw-text-green-400'></i>
+                                <span class="tw-text-sm">Fast Loading</span>
+                            </li>
+                            <li class="tw-flex tw-items-center tw-gap-2">
+                                <i class='bx bx-check tw-text-green-400'></i>
+                                <span class="tw-text-sm">SEO Optimized</span>
+                            </li>
+                        </ul>
+                        <div class="tw-text-center">
+                            <p class="tw-text-2xl tw-font-bold tw-mb-2">Starting at ₹5,000</p>
+                            <a href="#contact" class="btn btn-light tw-px-6 tw-py-2 tw-rounded-lg tw-font-medium hover:tw-scale-105 tw-transition-transform">
+                                Get Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+           <div class="col-lg-6 col-md-6 animate__animated" data-animate="animate__fadeInUp" data-delay="300">
+                    <div class="tw-bg-gradient-to-br tw-from-green-500 tw-to-blue-600 tw-p-6 tw-rounded-2xl tw-shadow-xl hover:tw-shadow-2xl tw-transition-all tw-duration-300 hover:tw-scale-105 tw-text-white tw-h-full">
+                        <div class="tw-text-center tw-mb-6">
+                            <i class='bx bxl-wordpress tw-text-5xl tw-mb-4'></i>
+                            <h3 class="tw-text-2xl tw-font-bold tw-mb-2">WordPress Solutions</h3>
+                        </div>
+                        <p class="tw-mb-6 tw-text-green-100">
+                            Custom WordPress websites, themes, and plugins. 
+                            Perfect for content-rich sites and e-commerce.
+                        </p>
+                        <ul class="tw-space-y-2 tw-mb-6">
+                            <li class="tw-flex tw-items-center tw-gap-2">
+                                <i class='bx bx-check tw-text-green-400'></i>
+                                <span class="tw-text-sm">Custom Themes</span>
+                            </li>
+                            <li class="tw-flex tw-items-center tw-gap-2">
+                                <i class='bx bx-check tw-text-green-400'></i>
+                                <span class="tw-text-sm">Plugin Development</span>
+                            </li>
+                            <li class="tw-flex tw-items-center tw-gap-2">
+                                <i class='bx bx-check tw-text-green-400'></i>
+                                <span class="tw-text-sm">Site Optimization</span>
+                            </li>
+                        </ul>
+                        <div class="tw-text-center">
+                            <p class="tw-text-2xl tw-font-bold tw-mb-2">Starting at ₹4,000</p>
+                            <a href="#contact" class="btn btn-light tw-px-6 tw-py-2 tw-rounded-lg tw-font-medium hover:tw-scale-105 tw-transition-transform">
+                                Get Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="tw-py-20">
+        <div class="container-fluid tw-max-w-7xl tw-mx-auto tw-px-4">
+            <div class="tw-text-center tw-mb-16 animate__animated" data-animate="animate__fadeInUp">
+                <h2 class="tw-text-4xl tw-font-bold tw-mb-4">
+                    My <span class="gradient-text">Projects</span>
+                </h2>
+                <p class="tw-text-lg tw-text-gray-600 dark:tw-text-gray-300">
+                    Recent work showcasing my skills
+                </p>
+            </div>
+            
+            
+            <div class="row g-5" id="projects-container">
+                <div class="col-lg-4 col-md-6 project-item" data-category="web">
+                    <div class="tw-bg-white dark:tw-bg-gray-800 tw-rounded-2xl tw-shadow-lg tw-overflow-hidden tw-group hover:tw-shadow-2xl tw-transition-all tw-duration-300 animate__animated" data-animate="animate__fadeInUp" data-delay="100">
+                        <div class="tw-relative tw-overflow-hidden">
+                            <img src="images/portfolio1.jpeg" alt="EditFlow" class="tw-w-full tw-h-64 tw-object-cover group-hover:tw-scale-110 tw-transition-transform tw-duration-500">
+                            <div class="tw-absolute tw-inset-0 tw-bg-gradient-to-t tw-from-black/70 tw-to-transparent tw-opacity-0 group-hover:tw-opacity-100 tw-transition-opacity tw-duration-300 tw-flex tw-items-end tw-p-6">
+                                <div class="tw-flex tw-gap-4">
+                                    <a href="https://edit-flow.vercel.app/" target="_blank" rel="noopener noreferrer" class="tw-bg-white tw-text-gray-800 tw-px-4 tw-py-2 tw-rounded-lg tw-font-medium hover:tw-scale-105 tw-transition-transform">
+                                        <i class='bx bx-link-external tw-mr-2'></i>Live Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tw-p-6">
+                            <div class="tw-flex tw-items-center tw-gap-2 tw-mb-3">
+                                <span class="tw-bg-blue-100 dark:tw-bg-blue-900 tw-text-blue-800 dark:tw-text-blue-200 tw-px-3 tw-py-1 tw-rounded-full tw-text-sm tw-font-medium">Web App</span>
+                            </div>
+                            <h3 class="tw-text-xl tw-font-bold tw-mb-2">EditFlow</h3>
+                            <p class="tw-text-gray-600 dark:tw-text-gray-300 tw-mb-4">
+                                A modern, responsive text editor with advanced features including bionic reading mode, 
+                                PDF export, and real-time word/character counts.
+                            </p>
+                            <div class="tw-flex tw-flex-wrap tw-gap-2">
+                                <span class="tw-bg-gray-100 dark:tw-bg-gray-700 tw-px-2 tw-py-1 tw-rounded tw-text-xs">JavaScript</span>
+                                <span class="tw-bg-gray-100 dark:tw-bg-gray-700 tw-px-2 tw-py-1 tw-rounded tw-text-xs">HTML5</span>
+                                <span class="tw-bg-gray-100 dark:tw-bg-gray-700 tw-px-2 tw-py-1 tw-rounded tw-text-xs">CSS3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 project-item" data-category="web">
+                    <div class="tw-bg-white dark:tw-bg-gray-800 tw-rounded-2xl tw-shadow-lg tw-overflow-hidden tw-group hover:tw-shadow-2xl tw-transition-all tw-duration-300 animate__animated" data-animate="animate__fadeInUp" data-delay="200">
+                        <div class="tw-relative tw-overflow-hidden">
+                            <img src="images/portfolio2.jpeg" alt="Postal Code App" class="tw-w-full tw-h-64 tw-object-cover group-hover:tw-scale-110 tw-transition-transform tw-duration-500">
+                            <div class="tw-absolute tw-inset-0 tw-bg-gradient-to-t tw-from-black/70 tw-to-transparent tw-opacity-0 group-hover:tw-opacity-100 tw-transition-opacity tw-duration-300 tw-flex tw-items-end tw-p-6">
+                                <div class="tw-flex tw-gap-4">
+                                    <a href="https://postal-code-app.vercel.app/" target="_blank" rel="noopener noreferrer" class="tw-bg-white tw-text-gray-800 tw-px-4 tw-py-2 tw-rounded-lg tw-font-medium hover:tw-scale-105 tw-transition-transform">
+                                        <i class='bx bx-link-external tw-mr-2'></i>Live Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tw-p-6">
+                            <div class="tw-flex tw-items-center tw-gap-2 tw-mb-3">
+                                <span class="tw-bg-green-100 dark:tw-bg-green-900 tw-text-green-800 dark:tw-text-green-200 tw-px-3 tw-py-1 tw-rounded-full tw-text-sm tw-font-medium">API Integration</span>
+                            </div>
+                            <h3 class="tw-text-xl tw-font-bold tw-mb-2">Postal Code Locator</h3>
+                            <p class="tw-text-gray-600 dark:tw-text-gray-300 tw-mb-4">
+                                An interactive application that retrieves location details using postal codes, 
+                                displaying results on an integrated map interface.
+                            </p>
+                            <div class="tw-flex tw-flex-wrap tw-gap-2">
+                                <span class="tw-bg-gray-100 dark:tw-bg-gray-700 tw-px-2 tw-py-1 tw-rounded tw-text-xs">JavaScript</span>
+                                <span class="tw-bg-gray-100 dark:tw-bg-gray-700 tw-px-2 tw-py-1 tw-rounded tw-text-xs">Maps API</span>
+                                <span class="tw-bg-gray-100 dark:tw-bg-gray-700 tw-px-2 tw-py-1 tw-rounded tw-text-xs">REST API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 project-item" data-category="wordpress">
+                    <div class="tw-bg-white dark:tw-bg-gray-800 tw-rounded-2xl tw-shadow-lg tw-overflow-hidden tw-group hover:tw-shadow-2xl tw-transition-all tw-duration-300 animate__animated" data-animate="animate__fadeInUp" data-delay="300">
+                        <div class="tw-relative tw-overflow-hidden">
+                            <img src="images/portfolio3.png" alt="MediCare Sonipat" class="tw-w-full tw-h-64 tw-object-cover group-hover:tw-scale-110 tw-transition-transform tw-duration-500">
+                            <div class="tw-absolute tw-inset-0 tw-bg-gradient-to-t tw-from-black/70 tw-to-transparent tw-opacity-0 group-hover:tw-opacity-100 tw-transition-opacity tw-duration-300 tw-flex tw-items-end tw-p-6">
+                                <div class="tw-flex tw-gap-4">
+                                    <a href="https://medicare-snp.vercel.app/" target="_blank" rel="noopener noreferrer" class="tw-bg-white tw-text-gray-800 tw-px-4 tw-py-2 tw-rounded-lg tw-font-medium hover:tw-scale-105 tw-transition-transform">
+                                        <i class='bx bx-link-external tw-mr-2'></i>Live Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tw-p-6">
+                            <div class="tw-flex tw-items-center tw-gap-2 tw-mb-3">
+                                <span class="tw-bg-purple-100 dark:tw-bg-purple-900 tw-text-purple-800 dark:tw-text-purple-200 tw-px-3 tw-py-1 tw-rounded-full tw-text-sm tw-font-medium">Business</span>
+                            </div>
+                            <h3 class="tw-text-xl tw-font-bold tw-mb-2">MediCare Sonipat</h3>
+                            <p class="tw-text-gray-600 dark:tw-text-gray-300 tw-mb-4">
+                                Professional pharmacy website project featuring service information, location details, 
+                                and customer-focused design for healthcare needs.
+                            </p>
+                            <div class="tw-flex tw-flex-wrap tw-gap-2">
+                                <span class="tw-bg-gray-100 dark:tw-bg-gray-700 tw-px-2 tw-py-1 tw-rounded tw-text-xs">Frontend</span>
+                                <span class="tw-bg-gray-100 dark:tw-bg-gray-700 tw-px-2 tw-py-1 tw-rounded tw-text-xs">Custom Theme</span>
+                                <span class="tw-bg-gray-100 dark:tw-bg-gray-700 tw-px-2 tw-py-1 tw-rounded tw-text-xs">Responsive</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="tw-py-20 tw-bg-white dark:tw-bg-gray-800">
+        <div class="container-fluid tw-max-w-7xl tw-mx-auto tw-px-4">
+            <div class="tw-text-center tw-mb-16 animate__animated" data-animate="animate__fadeInUp">
+                <h2 class="tw-text-4xl tw-font-bold tw-mb-4">
+                    My <span class="gradient-text">Process</span>
+                </h2>
+                <p class="tw-text-lg tw-text-gray-600 dark:tw-text-gray-300">
+                    How I work on your projects
+                </p>
+            </div>
+            
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6 animate__animated" data-animate="animate__fadeInUp" data-delay="100">
+                    <div class="tw-text-center tw-relative">
+                        <div class="tw-bg-primary-500 tw-w-16 tw-h-16 tw-rounded-full tw-flex tw-items-center tw-justify-center tw-mx-auto tw-mb-4 tw-text-white tw-text-2xl tw-font-bold">
+                            1
+                        </div>
+                        <h3 class="tw-text-xl tw-font-bold tw-mb-3">Discover</h3>
+                        <p class="tw-text-gray-600 dark:tw-text-gray-300">
+                            Understanding your needs, goals, and target audience to create the perfect solution.
+                        </p>
+                        <div class="tw-absolute tw-top-8 tw-left-full tw-w-full tw-h-0.5 tw-bg-gradient-to-r tw-from-primary-500 tw-to-transparent tw-hidden lg:tw-block"></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 animate__animated" data-animate="animate__fadeInUp" data-delay="200">
+                    <div class="tw-text-center tw-relative">
+                        <div class="tw-bg-purple-500 tw-w-16 tw-h-16 tw-rounded-full tw-flex tw-items-center tw-justify-center tw-mx-auto tw-mb-4 tw-text-white tw-text-2xl tw-font-bold">
+                            2
+                        </div>
+                        <h3 class="tw-text-xl tw-font-bold tw-mb-3">Design</h3>
+                        <p class="tw-text-gray-600 dark:tw-text-gray-300">
+                            Creating wireframes and mockups to visualize the final product before development.
+                        </p>
+                        <div class="tw-absolute tw-top-8 tw-left-full tw-w-full tw-h-0.5 tw-bg-gradient-to-r tw-from-purple-500 tw-to-transparent tw-hidden lg:tw-block"></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 animate__animated" data-animate="animate__fadeInUp" data-delay="300">
+                    <div class="tw-text-center tw-relative">
+                        <div class="tw-bg-green-500 tw-w-16 tw-h-16 tw-rounded-full tw-flex tw-items-center tw-justify-center tw-mx-auto tw-mb-4 tw-text-white tw-text-2xl tw-font-bold">
+                            3
+                        </div>
+                        <h3 class="tw-text-xl tw-font-bold tw-mb-3">Build</h3>
+                        <p class="tw-text-gray-600 dark:tw-text-gray-300">
+                            Developing your project with clean, efficient code and modern best practices.
+                        </p>
+                        <div class="tw-absolute tw-top-8 tw-left-full tw-w-full tw-h-0.5 tw-bg-gradient-to-r tw-from-green-500 tw-to-transparent tw-hidden lg:tw-block"></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 animate__animated" data-animate="animate__fadeInUp" data-delay="400">
+                    <div class="tw-text-center">
+                        <div class="tw-bg-orange-500 tw-w-16 tw-h-16 tw-rounded-full tw-flex tw-items-center tw-justify-center tw-mx-auto tw-mb-4 tw-text-white tw-text-2xl tw-font-bold">
+                            4
+                        </div>
+                        <h3 class="tw-text-xl tw-font-bold tw-mb-3">Deploy</h3>
+                        <p class="tw-text-gray-600 dark:tw-text-gray-300">
+                            Launching your project and providing ongoing support to ensure everything runs smoothly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="tw-py-20">
+        <div class="container-fluid tw-max-w-7xl tw-mx-auto tw-px-4">
+            <div class="tw-text-center tw-mb-16 animate__animated" data-animate="animate__fadeInUp">
+                <h2 class="tw-text-4xl tw-font-bold tw-mb-4">
+                    Let's <span class="gradient-text">Connect</span>
+                </h2>
+                <p class="tw-text-lg tw-text-gray-600 dark:tw-text-gray-300">
+                    Ready to start your project? Let's discuss your ideas!
+                </p>
+            </div>
+            
+            <div class="row tw-items-center g-5">
+                <div class="col-lg-6 animate__animated" data-animate="animate__fadeInLeft">
+                    <div class="tw-mb-8">
+                        <h3 class="tw-text-2xl tw-font-bold tw-mb-4">Get in Touch</h3>
+                        <p class="tw-text-lg tw-text-gray-600 dark:tw-text-gray-300 tw-mb-6">
+                            I'm always excited to work on new projects and help bring your ideas to life. 
+                            As a fresh developer, I'm eager to learn and grow while delivering quality work.
+                        </p>
+                        
+                        <div class="tw-space-y-4">
+                            <div class="tw-flex tw-items-center tw-gap-4">
+                                <div class="tw-bg-primary-100 dark:tw-bg-primary-900 tw-p-3 tw-rounded-lg">
+                                    <i class='bx bx-envelope tw-text-primary-600 tw-text-xl'></i>
+                                </div>
+                                <div>
+                                    <h4 class="tw-font-semibold">Email</h4>
+                                    <p class="tw-text-gray-600 dark:tw-text-gray-300">narayan2k01@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="tw-flex tw-items-center tw-gap-4">
+                                <div class="tw-bg-primary-100 dark:tw-bg-primary-900 tw-p-3 tw-rounded-lg">
+                                    <i class='bx bx-map tw-text-primary-600 tw-text-xl'></i>
+                                </div>
+                                <div>
+                                    <h4 class="tw-font-semibold">Location</h4>
+                                    <p class="tw-text-gray-600 dark:tw-text-gray-300">Sonipat, Haryana, India</p>
+                                </div>
+                            </div>
+                            <div class="tw-flex tw-items-center tw-gap-4">
+                                <div class="tw-bg-primary-100 dark:tw-bg-primary-900 tw-p-3 tw-rounded-lg">
+                                    <i class='bx bx-time tw-text-primary-600 tw-text-xl'></i>
+                                </div>
+                                <div>
+                                    <h4 class="tw-font-semibold">Response Time</h4>
+                                    <p class="tw-text-gray-600 dark:tw-text-gray-300">Within 24 hours</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 animate__animated" data-animate="animate__fadeInRight">
+                    <div class="tw-bg-white dark:tw-bg-gray-800 tw-p-8 tw-rounded-2xl tw-shadow-2xl">
+                        <form action="https://formsubmit.co/narayan2k01@gmail.com" method="POST" class="tw-space-y-6">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control tw-bg-gray-50 dark:tw-bg-gray-700 tw-border-gray-200 dark:tw-border-gray-600 tw-rounded-lg" id="fullName" name="full_name" placeholder="Full Name" required>
+                                        <label for="fullName" class="tw-text-gray-600 dark:tw-text-gray-300">Full Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control tw-bg-gray-50 dark:tw-bg-gray-700 tw-border-gray-200 dark:tw-border-gray-600 tw-rounded-lg" id="email" name="email" placeholder="Email Address" required>
+                                        <label for="email" class="tw-text-gray-600 dark:tw-text-gray-300">Email Address</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control tw-bg-gray-50 dark:tw-bg-gray-700 tw-border-gray-200 dark:tw-border-gray-600 tw-rounded-lg" id="mobile" name="mobile_number" placeholder="Mobile Number" required>
+                                        <label for="mobile" class="tw-text-gray-600 dark:tw-text-gray-300">Mobile Number</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control tw-bg-gray-50 dark:tw-bg-gray-700 tw-border-gray-200 dark:tw-border-gray-600 tw-rounded-lg" id="subject" name="email_subject" placeholder="Subject" required>
+                                        <label for="subject" class="tw-text-gray-600 dark:tw-text-gray-300">Subject</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-floating">
+                                <textarea class="form-control tw-bg-gray-50 dark:tw-bg-gray-700 tw-border-gray-200 dark:tw-border-gray-600 tw-rounded-lg" id="message" name="message" placeholder="Your Message" style="height: 120px" required></textarea>
+                                <label for="message" class="tw-text-gray-600 dark:tw-text-gray-300">Your Message</label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary tw-w-full tw-py-3 tw-text-lg tw-font-medium tw-rounded-lg hover:tw-scale-105 tw-transition-all">
+                                <i class='bx bx-send tw-mr-2'></i>Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="tw-bg-gray-900 tw-text-white tw-py-12">
+        <div class="container-fluid tw-max-w-7xl tw-mx-auto tw-px-4">
+            <div class="row tw-items-center">
+                <div class="col-md-6">
+                    <div class="tw-flex tw-items-center tw-gap-4 tw-mb-4 md:tw-mb-0">
+                        <div class="tw-bg-primary-500 tw-w-12 tw-h-12 tw-rounded-full tw-flex tw-items-center tw-justify-center">
+                            <span class="tw-text-xl tw-font-bold">N</span>
+                        </div>
+                        <div>
+                            <h3 class="tw-text-xl tw-font-bold gradient-text">Narayan Sharma</h3>
+                            <p class="tw-text-gray-400">Web Developer & Designer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 tw-text-md-end">
+                    <p class="tw-text-gray-400 tw-mb-0">
+                        &copy; 2025 Narayan Sharma. All rights reserved.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="tw-border-t tw-border-gray-800 tw-mt-8 tw-pt-8 tw-text-center">
+                <a href="#home" class="tw-inline-flex tw-items-center tw-justify-center tw-w-12 tw-h-12 tw-bg-primary-500 tw-rounded-full hover:tw-bg-primary-600 tw-transition-colors">
+                    <i class='bx bx-up-arrow-alt tw-text-xl'></i>
+                </a>
+            </div>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        // Typed.js initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            new Typed('#typed-text', {
+                strings: [
+                    'Web Developer',
+                    'Frontend Developer', 
+                    'Web Designer',
+                    'WordPress Developer'
+                    
+                ],
+                typeSpeed: 50,
+                backSpeed: 30,
+                backDelay: 2000,
+                loop: true
+            });
+        });
 
-    <script src="js/script.js"></script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme or default to light
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            html.classList.add('dark');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    const animateClass = element.dataset.animate;
+                    const delay = parseInt(element.dataset.delay) || 0;
+                    
+                    // Check for reduced motion preference
+                    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                    
+                    setTimeout(() => {
+                        if (animateClass && !prefersReducedMotion) {
+                            element.classList.add(animateClass);
+                        }
+                        element.style.opacity = '1';
+                        element.style.transform = 'none';
+                    }, prefersReducedMotion ? 0 : delay);
+                    
+                    observer.unobserve(element);
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements with animation
+        document.querySelectorAll('[data-animate]').forEach(el => {
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+            }
+            observer.observe(el);
+        });
+
+        // Project filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectItems = document.querySelectorAll('.project-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active', 'tw-bg-primary-500', 'tw-text-white'));
+                
+                // Add active class to clicked button
+                button.classList.add('active', 'tw-bg-primary-500', 'tw-text-white');
+                
+                const filter = button.dataset.filter;
+                
+                projectItems.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                        item.classList.add('animate__fadeInUp');
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Initialize first filter button as active
+        filterButtons[0].classList.add('active', 'tw-bg-primary-500', 'tw-text-white');
+
+        // Contact form status handling
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get('status');
+        
+        if (status === 'success') {
+            // Create success toast
+            const toast = document.createElement('div');
+            toast.className = 'tw-fixed tw-top-4 tw-right-4 tw-bg-green-500 tw-text-white tw-px-6 tw-py-3 tw-rounded-lg tw-shadow-lg tw-z-50 animate__animated animate__fadeInRight';
+            toast.innerHTML = '<i class="bx bx-check-circle tw-mr-2"></i>Message sent successfully!';
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add('animate__fadeOutRight');
+                setTimeout(() => toast.remove(), 500);
+            }, 3000);
+            
+            // Remove status from URL
+            window.history.replaceState({}, document.title, window.location.pathname + window.location.hash);
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('tw-shadow-lg');
+            } else {
+                navbar.classList.remove('tw-shadow-lg');
+            }
+        });
+    </script>
 </body>
 
 </html>
